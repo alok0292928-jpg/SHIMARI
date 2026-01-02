@@ -24,7 +24,7 @@ const UIOverlay: React.FC<UIOverlayProps> = ({ walletBalance, wormBalance, killF
             <div>
               <p className="text-[8px] text-white/40 font-orbitron uppercase tracking-[0.2em]">Total Wallet</p>
               <p className="text-xl font-orbitron font-black text-white leading-none">
-                ₹{walletBalance.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                ₹{(walletBalance || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const UIOverlay: React.FC<UIOverlayProps> = ({ walletBalance, wormBalance, killF
             <div>
               <p className="text-[8px] text-[#d4af37]/70 font-orbitron uppercase tracking-[0.2em]">Match Loot</p>
               <p className="text-xl font-orbitron font-black text-[#d4af37] animate-loot leading-none">
-                ₹{wormBalance.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+                ₹{(wormBalance || 0).toLocaleString(undefined, { minimumFractionDigits: 2 })}
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ const UIOverlay: React.FC<UIOverlayProps> = ({ walletBalance, wormBalance, killF
                 <span className={`text-[10px] font-bold truncate max-w-[80px] sm:max-w-[120px] ${worm.isPlayer ? 'text-[#d4af37]' : 'text-white/70'}`}>
                   {i + 1}. {worm.name}
                 </span>
-                <span className="text-[10px] text-[#d4af37] font-mono">₹{worm.balance.toFixed(2)}</span>
+                <span className="text-[10px] text-[#d4af37] font-mono">₹{(worm.balance || 0).toFixed(2)}</span>
               </div>
             ))}
           </div>
@@ -71,7 +71,7 @@ const UIOverlay: React.FC<UIOverlayProps> = ({ walletBalance, wormBalance, killF
               <span className="text-[10px] text-red-400/80">Looted</span>
               <span className="text-[10px] font-bold text-white uppercase">{kill.victimName}</span>
             </div>
-            <span className="text-xs font-black text-green-400 font-orbitron">+ ₹{kill.lootAmount.toFixed(2)}</span>
+            <span className="text-xs font-black text-green-400 font-orbitron">+ ₹{(kill.lootAmount || 0).toFixed(2)}</span>
           </div>
         ))}
       </div>

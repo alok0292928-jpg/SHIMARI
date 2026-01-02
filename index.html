@@ -14,7 +14,6 @@
         background-color: #050505;
         font-family: 'Inter', sans-serif;
         overflow: hidden;
-        touch-action: none;
       }
       .font-orbitron { font-family: 'Orbitron', sans-serif; }
       canvas {
@@ -26,6 +25,17 @@
         50% { text-shadow: 0 0 20px rgba(255, 215, 0, 1); }
       }
       .animate-loot { animation: pulse-gold 2s infinite; }
+      
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     </style>
   <script type="importmap">
 {
